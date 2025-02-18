@@ -24,7 +24,7 @@ Welcome to the **Custom Calculator** project! This is a simple yet stylish calcu
 
 ## 📸 **Demo**:
 
-![Demo](https://via.placeholder.com/350x250?text=Calculator+App)  
+![Demo](https://nagendrasriram.github.io/Calculator/)  
 *Insert your screenshot of the app here for a preview!*
 
 ---
