@@ -1,22 +1,34 @@
-// Function to append numbers or operators to the display
 function appendToDisplay(value) {
     const display = document.getElementById('display');
+    if (value === '.' && display.value.includes('.')) return;
     display.value += value;
 }
 
-// Function to clear the display
 function clearDisplay() {
     const display = document.getElementById('display');
     display.value = '';
 }
 
-// Function to calculate the result
+function backspace() {
+    const display = document.getElementById('display');
+    display.value = display.value.slice(0, -1);
+}
+
 function calculateResult() {
     const display = document.getElementById('display');
     try {
-        // Use the eval function to evaluate the expression
         display.value = eval(display.value);
     } catch (e) {
-        display.value = 'Error';
+        display.value = 'Invalid Expression';
     }
+}
+
+function clearAll() {
+    const display = document.getElementById('display');
+    display.value = '';
+}
+
+function toggleTheme() {
+    const body = document.body;
+    body.classList.toggle('dark-mode');
 }
