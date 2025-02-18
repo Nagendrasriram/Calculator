@@ -3,46 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advanced Calculator</title>
+    <title>Advanced Scientific Calculator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="calculator">
-        <input type="text" id="display" disabled>
-        
-        <!-- God Mode Button -->
-        <button class="btn" onclick="toggleGodMode()">🔓 God Mode</button>
+    <div class="calculator-container">
+        <div class="calculator">
+            <input type="text" id="display" disabled placeholder="0">
+            <div class="theme-buttons">
+                <button class="btn" onclick="toggleTheme()">🌙</button>
+                <button class="btn" onclick="clearDisplay()">C</button>
+                <button class="btn" onclick="toggleHistory()">His</button>
+            </div>
 
-        <div class="buttons">
-            <!-- Basic Calculator Buttons -->
-            <button class="btn" onclick="appendToDisplay('7')">7</button>
-            <button class="btn" onclick="appendToDisplay('8')">8</button>
-            <button class="btn" onclick="appendToDisplay('9')">9</button>
-            <button class="btn" onclick="appendToDisplay('/')">/</button>
-            <button class="btn" onclick="appendToDisplay('4')">4</button>
-            <button class="btn" onclick="appendToDisplay('5')">5</button>
-            <button class="btn" onclick="appendToDisplay('6')">6</button>
-            <button class="btn" onclick="appendToDisplay('*')">*</button>
-            <button class="btn" onclick="appendToDisplay('1')">1</button>
-            <button class="btn" onclick="appendToDisplay('2')">2</button>
-            <button class="btn" onclick="appendToDisplay('3')">3</button>
-            <button class="btn" onclick="appendToDisplay('-')">-</button>
-            <button class="btn" onclick="appendToDisplay('0')">0</button>
-            <button class="btn" onclick="clearDisplay()">C</button>
-            <button class="btn" onclick="calculateResult()">=</button>
-            <button class="btn" onclick="appendToDisplay('+')">+</button>
-            <button class="btn" onclick="backspace()">&#9003;</button>
-            <button class="btn" onclick="appendToDisplay('.')">.</button>
+            <!-- Calculator Buttons -->
+            <div class="buttons">
+                <button class="btn" onclick="appendToDisplay('7')">7</button>
+                <button class="btn" onclick="appendToDisplay('8')">8</button>
+                <button class="btn" onclick="appendToDisplay('9')">9</button>
+                <button class="btn" onclick="appendToDisplay('/')">/</button>
+                <button class="btn" onclick="appendToDisplay('4')">4</button>
+                <button class="btn" onclick="appendToDisplay('5')">5</button>
+                <button class="btn" onclick="appendToDisplay('6')">6</button>
+                <button class="btn" onclick="appendToDisplay('*')">*</button>
+                <button class="btn" onclick="appendToDisplay('1')">1</button>
+                <button class="btn" onclick="appendToDisplay('2')">2</button>
+                <button class="btn" onclick="appendToDisplay('3')">3</button>
+                <button class="btn" onclick="appendToDisplay('-')">-</button>
+                <button class="btn" onclick="appendToDisplay('0')">0</button>
+                <button class="btn" onclick="appendToDisplay('.')">.</button>
+                <button class="btn" onclick="calculateResult()">=</button>
+                <button class="btn" onclick="appendToDisplay('+')">+</button>
+            </div>
+
+            <!-- Scientific Buttons -->
+            <div class="extra-buttons">
+                <button class="btn" onclick="appendToDisplay('Math.sin(')">sin</button>
+                <button class="btn" onclick="appendToDisplay('Math.cos(')">cos</button>
+                <button class="btn" onclick="appendToDisplay('Math.tan(')">tan</button>
+                <button class="btn" onclick="appendToDisplay('Math.sqrt(')">√</button>
+                <button class="btn" onclick="appendToDisplay('Math.pow(')">x²</button>
+                <button class="btn" onclick="appendToDisplay('Math.log(')">log</button>
+                <button class="btn" onclick="appendToDisplay('Math.PI')">π</button>
+                <button class="btn" onclick="appendToDisplay('Math.E')">e</button>
+                <button class="btn" onclick="handleFactorial()">!</button>
+            </div>
         </div>
 
-        <!-- Extra Advanced Buttons (Initially hidden until God Mode is activated) -->
-        <div class="extra">
-            <button class="btn" onclick="appendToDisplay('sqrt(')">√</button>
-            <button class="btn" onclick="appendToDisplay('**2')">x²</button>
-            <button class="btn" onclick="appendToDisplay('%')">%</button>
-            <button class="btn" onclick="appendToDisplay('Math.sin(')">sin</button>
-            <button class="btn" onclick="appendToDisplay('Math.cos(')">cos</button>
-            <button class="btn" onclick="appendToDisplay('Math.tan(')">tan</button>
+        <!-- History Panel (Right Side) -->
+        <div id="history" class="history-panel">
+            <h3>History:</h3>
+            <ul id="history-list"></ul>
         </div>
     </div>
 
