@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
+    <title>Advanced Calculator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="calculator">
         <input type="text" id="display" disabled>
+        
+        <!-- God Mode Button -->
+        <button class="btn" onclick="toggleGodMode()">🔓 God Mode</button>
+
         <div class="buttons">
+            <!-- Basic Calculator Buttons -->
             <button class="btn" onclick="appendToDisplay('7')">7</button>
             <button class="btn" onclick="appendToDisplay('8')">8</button>
             <button class="btn" onclick="appendToDisplay('9')">9</button>
@@ -28,8 +33,16 @@
             <button class="btn" onclick="appendToDisplay('+')">+</button>
             <button class="btn" onclick="backspace()">&#9003;</button>
             <button class="btn" onclick="appendToDisplay('.')">.</button>
-            <button class="btn" onclick="toggleTheme()">🌙</button>
-            <button class="btn" onclick="clearAll()">AC</button>
+        </div>
+
+        <!-- Extra Advanced Buttons (Initially hidden until God Mode is activated) -->
+        <div class="extra">
+            <button class="btn" onclick="appendToDisplay('sqrt(')">√</button>
+            <button class="btn" onclick="appendToDisplay('**2')">x²</button>
+            <button class="btn" onclick="appendToDisplay('%')">%</button>
+            <button class="btn" onclick="appendToDisplay('Math.sin(')">sin</button>
+            <button class="btn" onclick="appendToDisplay('Math.cos(')">cos</button>
+            <button class="btn" onclick="appendToDisplay('Math.tan(')">tan</button>
         </div>
     </div>
 

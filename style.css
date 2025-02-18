@@ -1,85 +1,97 @@
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f0f0f0;
     margin: 0;
 }
 
-.calculator {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+/* Dark Mode */
+body.dark-mode {
+    background-color: #121212;
+    color: white;
 }
 
-input#display {
-    width: 100%;
-    height: 50px;
-    text-align: right;
-    font-size: 32px;
-    margin-bottom: 20px;
-    padding: 10px;
-    border: 1px solid #ccc;
+.calculator {
+    background-color: #fff;
     border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 260px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+#display {
+    width: 100%;
+    padding: 10px;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: right;
+    border-radius: 5px;
+    border: 1px solid #ccc;
     box-sizing: border-box;
 }
 
-.buttons {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-}
-
-button.btn {
-    padding: 20px;
-    font-size: 22px;
-    background-color: #f1f1f1;
+button {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    margin: 5px;
     border-radius: 5px;
-    border: none;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
     cursor: pointer;
-    transition: background-color 0.2s ease, transform 0.2s ease;
+    transition: background-color 0.2s, transform 0.1s;
 }
 
-button.btn:hover {
-    background-color: #4CAF50;
-    color: white;
-    transform: scale(1.1);
+button:hover {
+    background-color: #e0e0e0;
 }
 
-button.btn:active {
+button:active {
     transform: scale(0.95);
 }
 
-body.dark-mode {
+button:focus {
+    outline: none;
+}
+
+/* Extra buttons visibility when God Mode is activated */
+.extra {
+    display: none;
+}
+
+button.extra {
+    display: block;
+}
+
+/* Dark Mode Button */
+body.dark-mode button {
     background-color: #333;
     color: white;
+    border: 1px solid #444;
 }
 
-body.dark-mode .calculator {
-    background-color: #444;
+button.extra {
+    display: none;
 }
 
-body.dark-mode input#display {
-    background-color: #555;
-    color: white;
-}
-
-body.dark-mode button.btn {
-    background-color: #666;
-    color: white;
-}
-
-@media (max-width: 600px) {
-    .buttons {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 5px;
+/* Button active animation */
+@keyframes godModeEffect {
+    0% {
+        transform: scale(1);
+        opacity: 0;
     }
-
-    button.btn {
-        padding: 18px;
-        font-size: 18px;
+    100% {
+        transform: scale(1.2);
+        opacity: 1;
     }
+}
+
+button.active {
+    animation: godModeEffect 0.5s ease;
 }
