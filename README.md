@@ -4,7 +4,13 @@ Welcome to the **Custom Calculator** project! This is a simple yet stylish calcu
 
 ---
 
-## 🚀 **Features**:
+## 🚀 **Live Demo** 🎯  
+
+👉 **Try it here:** [Custom Calculator](https://nagendrasriram.github.io/Calculator/)  
+
+---
+
+## 🎨 **Features**:
 
 - **Basic Arithmetic Operations**: Addition, Subtraction, Multiplication, and Division.
 - **Sleek UI**: Modern and visually appealing layout with smooth transitions and animations.
@@ -22,12 +28,6 @@ Welcome to the **Custom Calculator** project! This is a simple yet stylish calcu
 
 ---
 
-## 📸 **Demo**:
-
-![Demo](https://nagendrasriram.github.io/Calculator/)  
-*Insert your screenshot of the app here for a preview!*
-
----
 
 ## 🏁 **Getting Started**:
 
